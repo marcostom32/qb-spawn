@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.container {
+    font-family: 'Poppins', sans-serif;
+}
+ 
+.spawn-locations {
+    text-transform: uppercase;
+    position: absolute;
+    top: 10vh;
+    left: 10vh;
+    background: linear-gradient(-45deg, #351c1ca1, #2b1010ab,#270505a6,#2c0808a1,#290202b0);
+    background-size: 400% 400%;
+    border-radius: .8vh;
+    padding: 30px;
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(var(--angle), #dc143c,#c3252500,#c3252500,#c3252500,#dc143c) 1;
+    animation:5s rotate linear infinite, shake-slow2 30s ease-in-out infinite;
+}
+
+
+.location {
+    width: 30vh;
+    height: 4.5vh;
+    margin-bottom: 2vh;
+    transition: 0.2s;
+    transition: .1s linear;
+    border-radius: .3vh;
+
+}
+
+.location > p {
+    position: relative;
+    color: #ededed;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 1.8vh;
+}
+
+.location:hover {
+    border: 2px solid;
+    border-image: linear-gradient(var(--angle), #dc143c,#c3252500,#c3252500,#c3252500,#dc143c) 1;
+    animation: blinkxd 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite,5s rotate linear infinite, shake-slow2 30s ease-in-out infinite;
+    background-color: rgb(0, 0, 0, 0.3);
+    transition: 0.2s;
+}
+
+.selected {
+    border: 3px solid;
+    border-image: linear-gradient(var(--angle), #dc143c,#c3252500,#c3252500,#c3252500,#dc143c) 1;
+    animation: blinkxd 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite,8s rotate linear infinite, shake-slow1 10s ease-in-out infinite;
+    background-color: rgb(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px #ff0c0c8f !important;
+}
+
+.submit-spawn {
+    animation:gradient 10s ease infinite,8s rotate linear infinite;
+    border-radius: 4px;
+    width: 28vh;
+    height: 4.5vh;
+    margin-bottom: .75vh;
+    transition: 0.2s;
+    border-radius: .3vh;
+    box-shadow: 0 0 10px #ff0c0c8f !important;
+    background: linear-gradient(-45deg, #be4b62c2, #bb324ec9,#a71b37c0,#d3163cc4,#ff0033c4);
+    background-size: 400% 400%;
+}
+
+.submit-spawn > p {
+    position: relative;
+    color: white;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 1.6vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.submit-spawn:hover {
+    animation:0.4s rotate linear infinite,gradient 15s ease infinite;
+
+    border:2px solid black;
+    box-shadow: 0 0 30px #0cffe38f !important;
+    background-color: rgb(190, 0, 0);
+    transition: 0.2s;
+    background: linear-gradient(-45deg, #be4b62c2, #bb324ec9,#a71b37c0,#d3163cc4,#ff0033c4);
+    background-size: 400% 400%;
+    border-image: linear-gradient(var(--angle), #dc143c,#c3252500,#c3252500,#c3252500,#dc143c) 1;
+}
+
+#spawn-label {
+    color: #ededed;
+    font-weight: bold;
+}
+
+.loclabel {
+    width: 28vh;
+    height: 4vh;
+    transition: 0.2s;
+}
+
+.loclabel > p {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    position: relative;
+    color: #ededed;
+    text-align: center;
+    font-size: 1.5vh;
+}
+
+
+@keyframes shake-slow{
+    0%{transform:translate(0, 0) rotate(0)}
+    15%{transform:translate(4px, 2px) rotate(-.1deg)}
+    30%{transform:translate(3px, -5px) rotate(0.5deg)}
+    50%{transform:translate(4px, -3px) rotate(-.5deg)}
+    70%{transform:translate(-3px, 3px) rotate(1.2deg)}
+    85%{transform:translate(-3px, 3px) rotate(1.2deg)}
+    100%{transform:translate(0, 0) rotate(0)}
+
+}
+
+@keyframes shake-slow2{
+    0%{transform:translate(0, 0) rotate(0) perspective(1600px) rotateY(30deg)}
+    15%{transform:translate(4px, 2px) rotate(-.1deg) perspective(1600px) rotateY(30deg)}
+    30%{transform:translate(3px, -5px) rotate(0.5deg) perspective(1600px) rotateY(30deg)}
+    50%{transform:translate(4px, -3px) rotate(-.5deg) perspective(1600px) rotateY(30deg)}
+    70%{transform:translate(-3px, 3px) rotate(1.2deg) perspective(1600px) rotateY(30deg)}
+    85%{transform:translate(-3px, 3px) rotate(1.2deg) perspective(1600px) rotateY(30deg)}
+    100%{transform:translate(0, 0) rotate(0) perspective(1600px) rotateY(30deg)}
+
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes blinkxd {
+    0% {
+        filter: brightness(0.75)
+    }
+    50% {
+        filter: brightness(1.75)
+    }
+    100% {
+        filter: brightness(0.75)
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
